@@ -37,13 +37,10 @@ class LeafNode(HTMLNode):
             return f"<{self.tag}>{self.value}</{self.tag}>"
         
         return f"<{self.tag}{self.props_to_html()}>{self.value}</{self.tag}>"
-        # if self.tag == "a" and "href" in self.props: #we know that self.props exists
-        #     return f'<a href=\"{self.props["href"]}\">{self.value}</a>'
-        # if self.tag == "img" and "src" in self.props and "alt" in self.props:
-        #     return f'<img src=\"{self.props["src"]}\" alt=\"{self.props["alt"]}\" />'
 
 class ParentNode(HTMLNode):
     def __init__(self, tag, children, props=None):
+        #EXPECTS children to be a
         super().__init__(tag=tag, value=None, children=children, props=props)
 
     def to_html(self):

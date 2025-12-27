@@ -4,6 +4,7 @@ from textnode import TextType, TextNode
 from htmlnode import HTMLNode, LeafNode
 
 def text_node_to_html_node(text_node):
+    #Returns: LeafNode
     #Not part of the TextNode class
     #Expects a TextNode that is one of the types of TextType
     if not text_node:
@@ -31,7 +32,7 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
     #No nested nodes!
     new_nodes = []
     for node in old_nodes:
-        print(node)
+        #print(node)
         if not node.text_type == TextType.TEXT:
             new_nodes.append(node)
         else:

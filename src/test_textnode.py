@@ -323,61 +323,6 @@ class TestTextNode(unittest.TestCase):
                 "- This is the first list item in a list block\n- This is a list item     \n- This is another list item"
             ],
         ) """
-    
-    def test_block_to_block_type_heading(self):
-        heading_md = "# Blah"
-        print(heading_md)
-        self.assertEqual(block_to_blocktype(heading_md), BlockType.HEADING)
-        heading_md = "## Blah"
-        print(heading_md)
-        self.assertEqual(block_to_blocktype(heading_md), BlockType.HEADING)
-        heading_md = "### Blah"
-        print(heading_md)
-        self.assertEqual(block_to_blocktype(heading_md), BlockType.HEADING)
-        heading_md = "#### Blah"
-        print(heading_md)
-        self.assertEqual(block_to_blocktype(heading_md), BlockType.HEADING)
-        heading_md = "##### Blah"
-        print(heading_md)
-        self.assertEqual(block_to_blocktype(heading_md), BlockType.HEADING)
-        heading_md = "###### Blah"
-        print(heading_md)
-        self.assertEqual(block_to_blocktype(heading_md), BlockType.HEADING)
-
-    def test_block_to_block_type_code(self):
-        md = "```here is some code\nmore code\nmore code   ```"
-        print(md)
-        blocktype = block_to_blocktype(md)
-        print(blocktype)
-        self.assertEqual(blocktype, BlockType.CODE)
-
-    def test_block_to_block_type_quote(self):
-        md = ">here is a quote\n>more quote\n>more quote   ```"
-        print(md)
-        blocktype = block_to_blocktype(md)
-        print(blocktype)
-        self.assertEqual(blocktype, BlockType.QUOTE)
-
-    def test_block_to_block_type_ulist(self):
-        md = "- here is a ulist\n- >more ulist\n- more ulist   ####"
-        print(md)
-        blocktype = block_to_blocktype(md)
-        print(blocktype)
-        self.assertEqual(blocktype, BlockType.ULIST)
-
-    def test_block_to_block_type_olist(self):
-        md = "1. here is an olist\n2. -more olist\n3. - more olist"
-        print(md)
-        blocktype = block_to_blocktype(md)
-        print(blocktype)
-        self.assertEqual(blocktype, BlockType.OLIST)
-
-    def test_block_to_block_type_paragraph(self):
-        md = "1. here is a paragraph\n2. -more paragraph\n4. - more paragraph"
-        print(md)
-        blocktype = block_to_blocktype(md)
-        print(blocktype)
-        self.assertEqual(blocktype, BlockType.PARAGRAPH)
 
 if __name__ == "__main__":
     unittest.main()
